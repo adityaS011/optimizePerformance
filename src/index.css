@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  ::selection {
+    @apply bg-primary/30;
+  }
+}
+
+/* highlight.js base overrides tuned to the app palette */
+@layer components {
+  .hljs {
+    background: transparent;
+    color: #e2e8f0;
+  }
+  .hljs-keyword,
+  .hljs-built_in {
+    color: #c084fc;
+  }
+  .hljs-string {
+    color: #86efac;
+  }
+  .hljs-title,
+  .hljs-title.function_ {
+    color: #93c5fd;
+  }
+  .hljs-attr,
+  .hljs-property {
+    color: #7dd3fc;
+  }
+  .hljs-number {
+    color: #fca5a5;
+  }
+  .hljs-comment {
+    color: #64748b;
+    font-style: italic;
+  }
+  .hljs-tag,
+  .hljs-name {
+    color: #f472b6;
+  }
+}
+
+/* Thin custom scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
